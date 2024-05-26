@@ -1,7 +1,0 @@
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUYH94DjrRF0QplK8P2-DbhcsmWeV6Thg&libraries=drawing"></script>
-<button (click)="startDrawing()">Deseneaza</button>
-<button (click)="deletePolygon(polygonToDelete)">Sterge</button>
-<div #mapContainer class="map-container">
-    <google-map #googleMap [center]="mapCenter" [options]="mapOptions" [zoom]="mapZoom" (mapClick)="onMapClick($event)"></google-map>
-</div>
