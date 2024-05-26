@@ -1,0 +1,860 @@
+<div class="consent-body" *ngIf="showConsentForm">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <div class="row">
+                <div class="col-12 text-left">
+                    Dear participant,
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    We invite you to participate in a scientific study made by Vovo for her thesis.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    We are informing you that the study before you is made to investigate certain hypotheses aimed for
+                    the general
+                    population, not to measure your particular information individually.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    Description of the experiment: In this experiment you’ll have to fill up some questionnaires. We’re
+                    gonna use some
+                    statistical analysts to calculate how well individuals can choose partners.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    Backing off from the study: Every participant can back off at any moment, without any kind of
+                    repercussion. There
+                    might exist the possibility of having certain participants removed from the study if the data
+                    provided is lacking
+                    or if the data they provide is affected or invalid.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    Confidentiality and safety: The team involved in the study will guarantee the safety and
+                    confidentiality of the
+                    data provided. The data provided by any participant will only be used for this study, nothing else.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    From the present studies, no negative effects should be present either on the short, medium or long
+                    term on the
+                    participants.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    The data collected will only be used for the declared purpose.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    If you have any further questions, please contact:
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-left">
+                    Vovo
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-left">
+                    Email: Vovo&#64;gmail.com
+                </div>
+            </div>
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            I consent. <p-checkbox [(ngModel)]="consentCheck" binary="true" inputId="binary" class="ml-1"
+                (click)="check()"></p-checkbox>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Continua catre chestionar" id="consentBtn" (click)="next()" class="disabled"></p-button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="consent-body" *ngIf="showUserData">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <strong style="text-decoration: underline;">Informații Demografice:</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Vârsta:</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Sub 18 ani</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Sub 18 ani" [(ngModel)]="userData.age"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">18-25 ani</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="18-25 ani" [(ngModel)]="userData.age"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">26-40 ani</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="26-40 ani" [(ngModel)]="userData.age"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">41-60 ani</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="41-60 ani" [(ngModel)]="userData.age"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Peste 60 ani</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Peste 60 ani"
+                        [(ngModel)]="userData.age" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Sex:</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Masculin</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Masculin" [(ngModel)]="userData.sex"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Feminin</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Feminin" [(ngModel)]="userData.sex"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Altul (specifică)</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="other" [(ngModel)]="userData.sex"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row" *ngIf="userData.sex == 'other'">
+                <div class="col-4 text-right"></div>
+                <div class="col-8">
+                    <input type="text" pInputText [(ngModel)]="userData.otherSex" />
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Zonă de rezidență în București:</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Sector 1</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Sector 1"
+                        [(ngModel)]="userData.sector" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Sector 2</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Sector 2"
+                        [(ngModel)]="userData.sector" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Sector 3</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Sector 3"
+                        [(ngModel)]="userData.sector" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Sector 4</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Sector 4"
+                        [(ngModel)]="userData.sector" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Sector 5</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Sector 5"
+                        [(ngModel)]="userData.sector" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Sector 6</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="Sector 6"
+                        [(ngModel)]="userData.sector" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Altele (specifică)</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled()" name="ageGroup" value="other" [(ngModel)]="userData.sector"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row" *ngIf="userData.sector == 'other'">
+                <div class="col-4 text-right"></div>
+                <div class="col-8">
+                    <input type="text" pInputText [(ngModel)]="userData.otherSector" />
+                </div>
+            </div>
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Continua" id="dataBtn" (click)="next1()" class="disabled"></p-button>
+        </div>
+    </div>
+
+</div>
+
+<div class="consent-body" *ngIf="userData.showChestionar1">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <strong style="text-decoration: underline;">Cunoștințe despre Cartierul Evreiesc:</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Ați auzit de Cartierul Evreiesc din București?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled1()" name="ageGroup" value="Da"
+                        [(ngModel)]="userData.chestionar1.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled1()" name="ageGroup" value="Nu"
+                        [(ngModel)]="userData.chestionar1.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Dacă da, cum ați aflat despre el? (Bifă pentru răspunsurile multiple)</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Prin intermediul călătoriilor în zonă</div>
+                <div class="col-8">
+                    <p-checkbox (click)="checkFilled1()" name="chestionar1Q2"
+                        value="Prin intermediul călătoriilor în zonă" [(ngModel)]="userData.chestionar1.q2"
+                        class="ml-2"></p-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Din istorie sau documentare</div>
+                <div class="col-8">
+                    <p-checkbox (click)="checkFilled1()" name="chestionar1Q2" value="Din istorie sau documentare"
+                        [(ngModel)]="userData.chestionar1.q2" class="ml-2"></p-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Prin intermediul știrilor sau mass-media</div>
+                <div class="col-8">
+                    <p-checkbox (click)="checkFilled1()" name="chestionar1Q2"
+                        value="Prin intermediul știrilor sau mass-media" [(ngModel)]="userData.chestionar1.q2"
+                        class="ml-2"></p-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Recomandare de la cunoscuți</div>
+                <div class="col-8">
+                    <p-checkbox (click)="checkFilled1()" name="chestionar1Q2" value="Recomandare de la cunoscuți"
+                        [(ngModel)]="userData.chestionar1.q2" class="ml-2"></p-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Altul (specifică)</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled1()" name="chestionar1Q2" value="other"
+                        [(ngModel)]="userData.chestionar1.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row" *ngIf="userData.chestionar1.q2 == 'other'">
+                <div class="col-4 text-right"></div>
+                <div class="col-8">
+                    <input type="text" (ngModelChange)="checkFilled1()" pInputText
+                        [(ngModel)]="userData.chestionar1.q2" />
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Continua" id="dataBtn1" (click)="next2()" class="disabled"></p-button>
+        </div>
+    </div>
+
+</div>
+
+<div class="consent-body" *ngIf="userData.showChestionar2">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <strong style="text-decoration: underline;">Percepții și Importanța Cartierului:</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Ce părere aveți despre Cartierul Evreiesc din București? (Bifă pentru răspunsurile
+                        multiple)</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Loc important al istoriei și culturii orașului</div>
+                <div class="col-8">
+                    <p-checkbox (click)="checkFilled2()" name="chestionar1Q2"
+                        value="Loc important al istoriei și culturii orașului" [(ngModel)]="userData.chestionar2.q1"
+                        class="ml-2"></p-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Zonă cu valoare arhitecturală și artistică</div>
+                <div class="col-8">
+                    <p-checkbox (click)="checkFilled2()" name="chestionar1Q2"
+                        value="Zonă cu valoare arhitecturală și artistică" [(ngModel)]="userData.chestionar2.q1"
+                        class="ml-2"></p-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Element vital al diversității culturale a Bucureștiului</div>
+                <div class="col-8">
+                    <p-checkbox (click)="checkFilled2()" name="chestionar1Q2"
+                        value="Element vital al diversității culturale a Bucureștiului"
+                        [(ngModel)]="userData.chestionar2.q1" class="ml-2"></p-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Merită să fie promovat pentru turism</div>
+                <div class="col-8">
+                    <p-checkbox (click)="checkFilled2()" name="chestionar1Q2"
+                        value="Merită să fie promovat pentru turism" [(ngModel)]="userData.chestionar2.q1" class="ml-2">
+                    </p-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Altele (specifică)</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled2()" name="chestionar1Q2" value="other"
+                        [(ngModel)]="userData.chestionar2.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row" *ngIf="userData.chestionar2.q1 == 'other'">
+                <div class="col-4 text-right"></div>
+                <div class="col-8">
+                    <input type="text" (ngModelChange)="checkFilled2()" pInputText
+                        [(ngModel)]="userData.chestionar2.q1" />
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Credeți că Cartierul Evreiesc ar trebui să fie conservat și restaurat?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled2()" name="ageGroup" value="Da"
+                        [(ngModel)]="userData.chestionar2.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled2()" name="ageGroup" value="Nu"
+                        [(ngModel)]="userData.chestionar2.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu sunt sigur</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled2()" name="ageGroup" value="Nu sunt sigur"
+                        [(ngModel)]="userData.chestionar2.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Continua" id="dataBtn2" (click)="next3()" class="disabled"></p-button>
+        </div>
+    </div>
+
+</div>
+
+<div class="consent-body" *ngIf="userData.showChestionar3">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <strong style="text-decoration: underline;">Participare și Implicare:</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Ați vizitat vreodată Cartierul Evreiesc?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da, în mod regulat</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled3()" name="ageGroup" value="Da, în mod regulat"
+                        [(ngModel)]="userData.chestionar3.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da, o dată sau de câteva ori</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled3()" name="ageGroup" value="Da, o dată sau de câteva ori"
+                        [(ngModel)]="userData.chestionar3.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu, dar aș dori să-l vizitez</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled3()" name="ageGroup" value="Nu, dar aș dori să-l vizitez"
+                        [(ngModel)]="userData.chestionar3.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu, nu sunt interesat</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled3()" name="ageGroup" value="Nu, nu sunt interesat"
+                        [(ngModel)]="userData.chestionar3.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Credeți că comunitatea locală ar trebui să fie mai implicată în conservarea și promovarea
+                        Cartierului Evreiesc?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da, cred că este important</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled3()" name="ageGroup" value="Da, cred că este important"
+                        [(ngModel)]="userData.chestionar3.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu, nu cred că este o prioritate</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled3()" name="ageGroup" value="Nu, nu cred că este o prioritate"
+                        [(ngModel)]="userData.chestionar3.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu sunt sigur</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled3()" name="ageGroup" value="Nu sunt sigur"
+                        [(ngModel)]="userData.chestionar3.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Continua" id="dataBtn3" (click)="next4()" class="disabled"></p-button>
+        </div>
+    </div>
+
+</div>
+
+<div class="consent-body" *ngIf="userData.showChestionar4">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <strong style="text-decoration: underline;">Cunoaștere despre Delimitarea Cartierului</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Aveți cunoștințe despre granițele sau limitele Cartierului Evreiesc din București?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da, am o idee clară despre acestea</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled4()" name="ageGroup" value="Da, am o idee clară despre acestea"
+                        [(ngModel)]="userData.chestionar4.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Am o vagă cunoaștere despre ele</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled4()" name="ageGroup" value="Am o vagă cunoaștere despre ele"
+                        [(ngModel)]="userData.chestionar4.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu, nu știu despre granițele cartierului</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled4()" name="ageGroup"
+                        value="Nu, nu știu despre granițele cartierului" [(ngModel)]="userData.chestionar4.q1"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Ați remarcat semne sau indicatoare care marchează intrarea sau granițele Cartierului
+                        Evreiesc?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da, am remarcat semne distincte</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled4()" name="ageGroup" value="Da, am remarcat semne distincte"
+                        [(ngModel)]="userData.chestionar4.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu, nu am observat asemenea semne</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled4()" name="ageGroup" value="Nu, nu am observat asemenea semne"
+                        [(ngModel)]="userData.chestionar4.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu sunt sigur</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled4()" name="ageGroup" value="Nu sunt sigur"
+                        [(ngModel)]="userData.chestionar4.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Continua" id="dataBtn4" (click)="next5()" class="disabled"></p-button>
+        </div>
+    </div>
+
+</div>
+
+<div class="consent-body" *ngIf="userData.showChestionar5">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <strong style="text-decoration: underline;">Claritatea Delimitării:</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Credeți că delimitarea clară a Cartierului Evreiesc ar fi benefică pentru vizitatori și
+                        locuitori?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da, ar fi util să fie clar marcat</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled5()" name="ageGroup" value="Da, ar fi util să fie clar marcat"
+                        [(ngModel)]="userData.chestionar5.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu, cred că nu este necesar</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled5()" name="ageGroup" value="Nu, cred că nu este necesar"
+                        [(ngModel)]="userData.chestionar5.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu sunt sigur</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled5()" name="ageGroup" value="Nu sunt sigur"
+                        [(ngModel)]="userData.chestionar5.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Ce opinie aveți despre indicatoare sau plăcuțe informative care să arate granițele
+                        Cartierului Evreiesc?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Util, ar putea ajuta la orientare și cunoaștere</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled5()" name="ageGroup"
+                        value="Util, ar putea ajuta la orientare și cunoaștere" [(ngModel)]="userData.chestionar5.q2"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Inutil, nu ar aduce nicio valoare</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled5()" name="ageGroup" value="Inutil, nu ar aduce nicio valoare"
+                        [(ngModel)]="userData.chestionar5.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Altă opinie (specifică)</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled5()" name="ageGroup" value="other"
+                        [(ngModel)]="userData.chestionar5.q2" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row" *ngIf="userData.chestionar5.q2 == 'other'">
+                <div class="col-4 text-right"></div>
+                <div class="col-8">
+                    <input type="text" pInputText [(ngModel)]="userData.chestionar5.q2" />
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Continua" id="dataBtn5" (click)="next6()" class="disabled"></p-button>
+        </div>
+    </div>
+
+</div>
+
+<div class="consent-body" *ngIf="userData.showChestionar6">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <strong style="text-decoration: underline;">Experiența Personală:</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Ați întâmpinat dificultăți în a identifica sau înțelege granițele Cartierului Evreiesc când
+                        ați vizitat zona?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da, a fost dificil să le identific</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled6()" name="ageGroup" value="Da, ar fi util să fie clar marcat"
+                        [(ngModel)]="userData.chestionar6.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu, am găsit ușor să le recunosc</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled6()" name="ageGroup" value="Nu, am găsit ușor să le recunosc"
+                        [(ngModel)]="userData.chestionar6.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu am vizitat zona</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled6()" name="ageGroup" value="Nu am vizitat zona"
+                        [(ngModel)]="userData.chestionar6.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-4 text-right">Care considerati că este aria care ar putea fi considerata ca fiind cea a
+                    Cartierului Evreiesc din Bucuresti? Va rugam sa marcati.</div>
+                <div class="col-8">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-8">
+                    <app-map></app-map>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Continua" id="dataBtn6" (click)="next7()" class="disabled"></p-button>
+        </div>
+    </div>
+
+</div>
+
+<div class="consent-body" *ngIf="userData.showChestionar7">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <strong style="text-decoration: underline;">Interesul pentru Istorie și Cultură:</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Considerați că cunoașterea granițelor Cartierului Evreiesc ar încuraja un mai mare interes
+                        pentru istoria și cultura evreiască din București?</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Da, cred că ar putea stârni curiozitatea</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled7()" name="ageGroup"
+                        value="Da, cred că ar putea stârni curiozitatea" [(ngModel)]="userData.chestionar7.q1"
+                        class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu, nu cred că granițele au legătură cu interesul cultural</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled7()" name="ageGroup"
+                        value="Nu, nu cred că granițele au legătură cu interesul cultural"
+                        [(ngModel)]="userData.chestionar7.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right">Nu sunt sigur</div>
+                <div class="col-8">
+                    <p-radioButton (click)="checkFilled7()" name="ageGroup" value="Nu sunt sigur"
+                        [(ngModel)]="userData.chestionar7.q1" class="ml-2"></p-radioButton>
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8 text-center">
+                    <strong style="text-decoration: underline;">Opinii Libere:</strong>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-5 text-right">
+                    <strong>Vă rugăm să împărtășiți orice alte idei sau sugestii despre cum ar putea fi clarificate sau
+                        marcate granițele Cartierului Evreiesc:</strong>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-right"></div>
+                <div class="col-8">
+                    <textarea rows="5" cols="30" pInputTextarea (ngModelChange)="checkFilled7()" [(ngModel)]="userData.chestionar7.q2">
+                    </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p-button label="Gata" id="dataBtn7" (click)="next8()" class="disabled"></p-button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+.consent-body{
+    margin-top: 50px;
+}
+
+.row{
+    margin-top: 10px;
+  }
+.p-button:disabled{
+    pointer-events: none;
+}  
+
+.disabled{
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+#consentBtn { 
+    padding-bottom: 50px;
+}
+
+#dataBtn{ 
+    padding-bottom: 50px;
+}
